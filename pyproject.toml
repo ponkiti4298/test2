@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "rag-samlple"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "^1.35.3"
+numpy = "^2.0.0"
+sqlite-vss = "^0.1.2"
+pandas = "^2.2.2"
+openpyxl = "^3.1.4"
+streamlit = "^1.36.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
