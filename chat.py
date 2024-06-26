@@ -38,7 +38,7 @@ def find_similar_documents(query, limit=10):
     return result
 
 def generate_response(query, context):
-    prompt = f"""以下の情報を参考にして、質問に答えてください。情報:{context}質問: {query}回答:"""
+    prompt = f"""以下の情報を参考にして、それぞれの手順について詳しく質問に答えてください。他に残っている手順があれば、残っている手順を提示してください。それぞれの情報を混同しないでください。情報:{context}質問: {query}回答:"""
 
     response = client.chat.completions.create(
         model="gpt-4o",
@@ -46,12 +46,12 @@ def generate_response(query, context):
             {"role": "user", "content": prompt}
         ],
         temperature=0.7,
-        max_tokens=1000,
+        max_tokens=3000,
         stream=True
     )
     return response
 
-st.title("GPT-4o ニュースチャットボット")
+st.title("blenderキャラクターモデリング解説bot")
 
 # チャット履歴の初期化
 if "messages" not in st.session_state:
