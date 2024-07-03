@@ -38,7 +38,7 @@ def find_similar_documents(query, limit=10):
     return result
 
 def generate_response(query, context):
-    prompt = f"""以下の情報を参考にして、それぞれの手順について詳しく質問に答えてください。他に残っている手順があれば、残っている手順を提示してください。それぞれの情報を混同しないでください。情報:{context}質問: {query}回答:"""
+    prompt = f"""以下の情報を参考にして、それぞれの操作について詳しく質問に答えてください。他に残っている手順があれば、残っている手順を提示してください。それぞれの情報を混同しないでください。情報:{context}質問: {query}回答:"""
 
     response = client.chat.completions.create(
         model="gpt-4o",
